@@ -12,6 +12,7 @@ Fork of [ESLint Annotate from Report JSON](https://github.com/marketplace/action
 | `GITHUB_TOKEN` | The [`GITHUB_TOKEN` secret](https://docs.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret) | No | `${{ github.token }}` |
 | `report-json` | Path or [glob pattern](https://github.com/actions/toolkit/tree/master/packages/glob) to locate the ESLint report JSON file. Use multiple lines to specify multiple glob patterns. | No | `eslint_report.json` |
 | `only-pr-files` | Only annotate files changed when run on the `pull_request` event | No | `true` |
+| `rule-contains` | Filter to only annotate errors where any of the given strings is a substring of RuleID. Input as a single string, comma separated. | No | `""`
 | `fail-on-warning` | Fail the GitHub Action when ESLint warnings are detected. Set to `true` to enable. | No | `false` |
 | `fail-on-error` | Whether to fail the Github action when ESLint errors are detected. If set to false, the check that is created will still fail on ESLint errors. | No | `true` |
 | `check-name` | The name of the GitHub status check created. | No | `ESLint Report Analysis` |
@@ -71,6 +72,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           report-json: "eslint_report.json"
+          rule-contains: "a11y, react"
       # OPTIONAL: save a copy of the usage report for download or use in another job
       # - name: Upload ESLint report
       #   uses: actions/upload-artifact@v4
