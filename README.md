@@ -1,26 +1,9 @@
 # ESLint Annotate from Report JSON
 
-## Version `3.0.0`
-
-See the [Changelog](./CHANGELOG.md) for breaking changes when upgrading from `v1` or `v2`
 
 ## Description
 
-Analyzes an ESLint a report JSON file and posts the results.
-
-On `pull_request` annotates the pull request diff with warnings and errors
-
-![image](./assets/eslint-annotate-action-pr-error-example.png)
-
-On `push` creates a `ESLint Report Analysis` with a summary of errors and warnings, including links to the line numbers of the violations.
-
-![image](./assets/eslint-annotate-action-push-report-example.png)
-
-## Why another ESLint action?
-
-The others I tried to use ran ESLint in NodeJS themselves. With this action, I can take an ESLint report generated from the command line and process the results.
-
-This allows for more flexibility on how ESLint is run. This action is agnostic enough to handle different configurations, extensions, etc. across projects without making assumptions on how ESLint should be run.
+Fork of [ESLint Annotate from Report JSON](https://github.com/marketplace/actions/eslint-annotate-from-report-json)
 
 ## Inputs
 

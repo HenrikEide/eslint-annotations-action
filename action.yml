@@ -13,6 +13,10 @@ inputs:
     description: "Only annotate files changed when run on the 'pull_request' event"
     default: 'true'
     required: false
+  rule-contains:
+    description: "Consider only rules where ruleID contains one of the provided comma separated strings"
+    default: ''
+    required: false
   fail-on-warning:
     description: "Fail the GitHub Action when ESLint warnings are detected. Set to 'true' to enable."
     default: 'false'
